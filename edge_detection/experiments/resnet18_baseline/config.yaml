@@ -1,0 +1,23 @@
+data:
+  img_size:
+  - 224
+  - 224
+  test_csv: data/edges_test/edges_test.csv
+  test_dir: data/edges_test
+  train_csv: data/edges_train/edges_train.csv
+  train_dir: data/edges_train
+  val_csv: data/edges_validation/edges_validation.csv
+  val_dir: data/edges_validation
+experiment_name: resnet18_baseline
+hyperparameters:
+  batch_size: 16
+  epochs: 16
+  learning_rate: 0.001
+  loss_fn: mse
+  optimizer: adam
+  scheduler: cosine
+  weight_decay: 1e-4
+model:
+  architecture: resnet18
+  num_classes: 8
+  pretrained: true

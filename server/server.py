@@ -231,6 +231,7 @@ def find_edges(img):
     img = cv2.GaussianBlur(img, (15, 15), 0)
 
     edges = cv2.Canny(img, 55, 150)
+    cv2.imshow("edg", img)
     return edges
 
 
@@ -351,7 +352,7 @@ def predict(image, predictor):
 
 def main():
     # Choose your model here
-    use_cnn = False
+    use_cnn = True
 
     if use_cnn:
         predictor = CNNPredictor(

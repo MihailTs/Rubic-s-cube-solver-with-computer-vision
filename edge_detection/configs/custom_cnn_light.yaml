@@ -1,0 +1,27 @@
+experiment_name: "custom_cnn_light"
+
+# Data paths & parameters
+data:
+  train_csv: "data/edges_train/edges_train.csv"
+  train_dir: "data/edges_train"
+  val_csv: "data/edges_validation/edges_validation.csv"
+  val_dir: "data/edges_validation"
+  test_csv: "data/edges_test/edges_test.csv"
+  test_dir: "data/edges_test"
+  img_size: [128, 128]
+
+# Model settings
+model:
+  architecture: "custom_cnn"       # Options: 'custom_cnn', 'resnet18', 'resnet34', 'mobilenet_v3'
+  pretrained: false
+  num_classes: 8                   # 4 corners * 2 coordinates (x, y)
+
+# Optimization settings
+hyperparameters:
+  epochs: 20
+  batch_size: 16
+  learning_rate: 0.001
+  optimizer: "adamw"               # 'adam', 'sgd', 'adamw'
+  weight_decay: 1e-4
+  scheduler: "none"                # 'none', 'cosine', 'step'
+  loss_fn: "l1"                    # L1 / Smooth L1 loss is robust to corner regression
