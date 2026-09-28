@@ -14,7 +14,8 @@ The approach used to make predictions for each side of the cube is the following
 
 ### Edge detection and cubie center interpolation
 
-Canny edge detection is used to find the edges of the uploaded image. Then the leftmost, rightmost, upmost and downmost points of the edges are used to find the vertices of the face. After that using simple geometry the centers of the cubies are found.
+Canny edge detection is used to find the edges of the uploaded image. Then the leftmost, rightmost, upmost and downmost points of the edges are used to find the vertices of the face. After that using simple geometry the centers of the cubies are found. 
+(Experiments were held with Convolutional Neural Networks for the corner detection, but did not yeld great results, probably due to the necesity of more training images, despite data augmentation) 
 
 <img title="Edge detection" alt="Edge detection example" src="/project_images/edge_detection.png">
 
